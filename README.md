@@ -42,7 +42,147 @@ Mata Kuliah : Pemrograman Web
 <img width="627" height="355" alt="js16" src="https://github.com/user-attachments/assets/9dec8c9b-9dd0-4f4d-8c1b-aa5aafa4eda5" />
 
 
+Praktikum 5 : HTML Dasar - Pemrograman Web 
 
+G. JAWABAN
+
+1. Perbedaan console.log(), alert(), prompt(), dan textContent/innerHTML
+
+console.log() digunakan untuk menampilkan informasi di console browser. alert() digunakan untuk 
+menampilkan pesan dalam kotak dialog. prompt() digunakan untuk meminta input dari pengguna melalui 
+kotak dialog. textContent digunakan untuk menampilkan atau mengubah teks pada elemen HTML, 
+sedangkan innerHTML digunakan untuk menampilkan atau mengubah isi HTML di dalam elemen.
+
+2. Perbedaan let dan const
+
+let digunakan untuk membuat variabel yang nilainya dapat diubah, sedangkan const digunakan untuk 
+membuat variabel yang tidak dapat diberi nilai ulang.
+Contoh:
+
+let nama = "Zacky";
+nama = "Virgiano";
+
+const umur = 20;
+
+Pada contoh tersebut, nilai variabel nama dapat diubah, sedangkan nilai variabel umur tidak dapat diberi 
+nilai ulang
+
+3. Perbedaan operator == dan ===
+
+Operator == digunakan untuk membandingkan nilai dengan memungkinkan konversi tipe data, sedangkan 
+operator === digunakan untuk membandingkan nilai sekaligus tipe datanya.
+Contoh:
+
+console.log(5 == "5"); // true
+console.log(5 === "5"); // false
+
+4. Fungsi if–else dan switch
+
+if–else digunakan untuk menjalankan kode berdasarkan kondisi tertentu, sedangkan switch digunakan 
+untuk memilih tindakan berdasarkan nilai suatu variabel atau ekspresi.
+
+Contoh if–else:
+
+let nilai = 80;
+if (nilai >= 75) {
+ console.log("Lulus");
+} else {
+ console.log("Tidak lulus");
+}
+
+Contoh switch:
+
+let hari = 1;
+switch (hari) {
+ case 1:
+ console.log("Senin");
+ break;
+ case 2:
+ console.log("Selasa");
+ break;
+ default:
+ console.log("Hari tidak diketahui");
+}
+
+if–else cocok digunakan untuk kondisi yang melibatkan perbandingan atau rentang nilai, sedangkan switch 
+cocok digunakan untuk beberapa pilihan berdasarkan nilai tertentu.
+
+5. Fungsi parameter dan return dalam function
+
+Parameter digunakan untuk menerima data yang diberikan kepada function, sedangkan return digunakan 
+untuk mengembalikan hasil dari function.
+
+Contoh:
+function tambah(a, b) {
+ return a + b;
+}
+
+let hasil = tambah(5, 3);
+console.log(hasil);
+
+Hasil yang ditampilkan adalah 8. Parameter pada contoh tersebut adalah a dan b, sedangkan return 
+mengembalikan hasil penjumlahan kedua nilai tersebut
+
+6. Cara JavaScript memilih elemen HTML menggunakan document.getElementById()
+
+document.getElementById() digunakan untuk memilih elemen HTML berdasarkan atribut id yang 
+dimilikinya.
+
+Contoh:
+
+<p id="pesan">Halo</p>
+
+<script>
+ let elemen = document.getElementById("pesan");
+ elemen.textContent = "Selamat belajar JavaScript";
+</script>
+
+Pada contoh tersebut, JavaScript memilih elemen dengan id "pesan", kemudian mengubah teksnya menjadi 
+"Selamat belajar JavaScript".
+
+7. Script untuk memvalidasi form agar nama tidak kosong dan nilai berada pada rentang 0–100
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Validasi Form</title>
+</head>
+<body>
+ <h2>Form Nilai Mahasiswa</h2>
+ <form id="formNilai">
+ <label>Nama:</label>
+ <input type="text" id="nama">
+ <br><br>
+ <label>Nilai:</label>
+ <input type="number" id="nilai">
+ <br><br>
+ <button type="submit">Kirim</button>
+ </form>
+ <p id="pesan"></p>
+ <script>
+ document.getElementById("formNilai").addEventListener("submit", function(event) {
+ event.preventDefault();
+ let nama = document.getElementById("nama").value.trim();
+ let nilai = document.getElementById("nilai").value;
+ let pesan = document.getElementById("pesan");
+ if (nama === "") {
+ pesan.textContent = "Nama tidak boleh kosong.";
+ } else if (nilai === "" || Number(nilai) < 0 || Number(nilai) > 100) {
+ pesan.textContent = "Nilai harus berada pada rentang 0–100.";
+ } else {
+ pesan.textContent = "Data berhasil divalidasi.";
+ }
+ });
+ </script>
+</body>
+</html>
+
+Penjelasan:
+Script tersebut memeriksa apakah nama sudah diisi dan nilai berada pada rentang 0 sampai 100. Jika nama 
+kosong atau nilai tidak sesuai rentang, pesan kesalahan akan ditampilkan. Jika semua data valid, pesan 
+"Data berhasil divalidasi" akan ditampilkan.
 
 
 
